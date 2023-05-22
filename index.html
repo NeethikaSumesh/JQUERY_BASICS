@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+
+    <div style="width: 300px;height: 300px;background: greenyellow;" id="box">
+
+    </div>
+
+    <input type="text" id="inp">
+    <label style="display: none;" id="error">Enter minimum 4 characters</label>
+    <input type="text" id="">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    
+
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                //alert("Button clicked")
+                //$("box").hide() when the button is clicked the box is hidden
+                //$("box").toggle() when cliked the box is hidden and next box re-appears 
+                //$("box").toggle(3000) animation
+                $("box").fadeToggle(3000)
+            })
+
+            $("#btn").mouseenter(function(){
+                $(this).css({"background":"red"})
+            })
+
+            $("#inp").blur(function(){
+                var text=$(this).val()
+                if(text.length<4){
+                    //alert("Enter minimum characters")
+                    $("#error").show()
+                }else{
+                    $("#error").hide()
+                }
+            })
+
+
+
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--JQUERY
+ EG:
+ <body>
+    <button id="btn">Click me</button>
+    <script src="https://...."></script>
+    <script>
+        $(document).ready(function() --the webpage will be available only if it is fully loaded
+        {
+            $("#btn").click(function()
+            {
+                alert("button clicked")
+            }
+            )
+        })
+    </script>
+</body>
+
+*function()--anonymous functions -that execute at that time itself
+*in js and jquery we can write functions inside another function
+*ACTIONS: user interract with the browser
+    1. click
+    2. mouseenter
+    3. mouseleave
+    4. keypress
+    5. keydown
+    6. keyup
+    7. submit
+    8. select
+    9. focus
+    10. blur
+    11. load
+    12. scroll
+
+-->
